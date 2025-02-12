@@ -3,89 +3,104 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>krm EZ homepage</title>
-  <script src="https://kit.fontawesome.com/15b229209b.js" crossorigin="anonymous"></script>
+  <title>Glass Cards</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/15b229209b.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
   <!-- partial:index.partial.html -->
-  <div class="container">
-    <div class="tl"></div>
-    <div class="tc"></div>
-    <div class="tr"></div>
-    <div class="cl"></div>
-    <div class="cc"></div>
-    <div class="cr"></div>
-    <div class="bl"></div>
-    <div class="bc"></div>
-    <div class="br"></div>
-    <div class="hl" id="highlight"></div>
-    <input id="check" type="checkbox" />
-    <label for="check"></label>
-    <div class="card">
-      <div class="front">
-        <h2>@krm1337</h2>
-        <h4> Native Mobile & Web Apps </i></h4>
-        <div class="links">
-          <a href="#">
-            <i class="fa-brands fa-flutter"></i>
+  <!-- 
+Base designed by Fabian Albert:  
+https://www.pinterest.com/pin/1045749975969474374/ 
+-->
+
+  <div class="card">
+
+    <div class="links">
+      <a href="#">
+        <i class="fa-brands fa-flutter"></i>
 
 
-          </a>
-          <a href="#">
+      </a>
+      <a href="#">
 
-            <i class="fa-brands fa-dart-lang"></i>
+        <i class="fa-brands fa-dart-lang"></i>
 
-          </a>
-          <a href="#">
+      </a>
+      <a href="#">
 
-            <i class="fa-brands fa-php"></i>
+        <i class="fa-brands fa-php"></i>
 
-          </a>
-          <a href="#">
+      </a>
+      <a href="#">
 
-            <i class="fa-brands fa-js"></i>
+        <i class="fa-brands fa-js"></i>
 
-          </a>
+      </a>
 
-          <a href="#">
+      <a href="#">
 
-            <i class="fa-brands fa-css"></i>
+        <i class="fa-brands fa-css"></i>
 
-          </a>
-          <a href="#">
+      </a>
+      <a href="#">
 
-            <i class="fa-brands fa-python"></i>
+        <i class="fa-brands fa-python"></i>
 
-          </a>
-          <a href="#">
+      </a>
+      <a href="#">
 
-            <i class="fa-solid fa-database"></i>
-          </a>
-          <a href="#">
+        <i class="fa-solid fa-database"></i>
+      </a>
+      <a href="#">
 
-            <i class="fa-brands fa-square-git"></i>
-          </a>
+        <i class="fa-brands fa-square-git"></i>
+      </a>
 
 
 
-        </div>
-      </div>
-      <div class="back">
-
-        <div class="links">
-
-          <a href="#">
-            <i class="fa-solid fa-envelope"></i></a>
-
-        </div>
-        <h3>krimerleet@gmail.com</h3>
-      </div>
     </div>
+
+
+    <h2>Native Mobile & Web Apps</h2>
+    <p class="aP">@krm1337</p>
+    <div class="copy-btn button" onclick="copyText(this)">krimerleet@gmail.com</div>
+  </div>
+  <div class="accents">
+    <div class="acc-card"></div>
+    <div class="acc-card"></div>
+    <div class="acc-card"></div>
+    <div class="light"></div>
+    <div class="light sm"></div>
+    <!-- <div class="top-light"></div> -->
+
+    <div id="flashMessage" class="flash-message">Copied to clipboard!</div>
+
   </div>
   <!-- partial -->
+
+
+  <script>
+    function copyText(button) {
+      const text = button.innerText;  // Get button text
+      navigator.clipboard.writeText(text).then(() => {
+        showFlashMessage();
+      });
+    }
+
+    function showFlashMessage() {
+      const flash = document.getElementById("flashMessage");
+      flash.style.display = "block";
+      flash.style.opacity = "1";
+
+      setTimeout(() => {
+        flash.style.opacity = "0";
+        setTimeout(() => { flash.style.display = "none"; }, 300);
+      }, 1500);  // Hide after 1.5 seconds
+    }
+  </script>
 
 </body>
 
